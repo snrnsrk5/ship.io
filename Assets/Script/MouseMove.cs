@@ -1,33 +1,60 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class MouseMove : MonoBehaviour
-{
-    [SerializeField] float speed = 10f;
-    Vector3 mousePos, transPos, targetPos;
-    float test;
-
-    void Update()
-    {
-        CalTargetPos();
-
-        MoveToTarget();
-    }
-
-    void CalTargetPos()
-    {
-        mousePos = Input.mousePosition;
-        mousePos.z = mousePos.y;
-        mousePos.y = 5;
-        transPos = Camera.main.ScreenToWorldPoint(mousePos);
-        targetPos = new Vector3(-transPos.x, 5, -transPos.z);
+ using UnityEngine;
+ 
+ namespace BarthaSzabolcs.IsometricAiming
+ {
+     public class MouseMove : MonoBehaviour
+     {
+        Camera camera;
+        [SerializeField] bool isMove;
+        [SerializeField] float speed;
+        Vector3 destination;
         
-    }
+        [SerializeField] GameObject ok;
+        [SerializeField] GameObject load;
+        void Awake(){
+            camera = Camera.main;
+            
+        }
 
-    void MoveToTarget()
-    {
-        //transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
-        transform.position = targetPos;
-    }
-}
+        void Update(){
+            RaycastHit hit;
+            if(Physics.Raycast(camera.ScreenPointToRay
+            (Input.mousePosition), out hit))
+            {
+                SetDes(hit.point);
+            }
+            Move();
+            CursorColor();
+        }
+
+        void SetDes(Vector3 dest){
+            destination = dest;
+            isMove = true;
+        }
+
+        void Move(){
+            if(isMove)
+            {
+                var dir = destination - transform.position;
+                
+                transform.position = Vector3.MoveTowards(transform.position, destination, Time.deltaTime * speed);
+
+            }
+
+            if(Vector3.Distance(transform.position, destination)<=0.1f){
+                isMove = false;
+
+            }
+        }
+        void CursorColor(){
+            if(isMove){
+                ok.SetActive(false);
+                load.SetActive(true);
+            }
+            else{
+                ok.SetActive(true);
+                load.SetActive(false);
+            }
+        }
+     }
+ }

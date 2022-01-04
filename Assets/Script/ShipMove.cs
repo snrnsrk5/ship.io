@@ -35,7 +35,7 @@ public class ShipMove : MonoBehaviour
         lHalf = Mathf.Round(-maxSteering * 0.5f *10 ) * 0.1f;
 
         accel = 0;
-        InvokeRepeating("Kts", 0f, 0.5f);
+        InvokeRepeating("Kts", 0f, 0.5f); // KTS 실행하는거 여기있음 !!!!!
     }
 
     void FixedUpdate() {
@@ -49,6 +49,7 @@ public class ShipMove : MonoBehaviour
         Accel();
         SteeringAccel();
         Jt();
+        //Kts();
     }
 
     void Accel(){

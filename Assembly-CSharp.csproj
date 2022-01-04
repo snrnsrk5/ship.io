@@ -36,20 +36,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Ocean\Scripts\PropellerBoats.cs" />
-     <Compile Include="Assets\Ocean\Scripts\WakeGenerator.cs" />
      <Compile Include="Assets\Script\MainCamera.cs" />
-     <Compile Include="Assets\Ocean\Scripts\BoatController.cs" />
-     <Compile Include="Assets\Ocean\Scripts\Tools\Proxies.cs" />
-     <Compile Include="Assets\Ocean\Scripts\Orbital.cs" />
-     <Compile Include="Assets\Ocean\Scripts\GameEntity\FloatingGameEntityFlat.cs" />
-     <Compile Include="Assets\Ocean\Scripts\GameEntity\GameEntity.cs" />
      <Compile Include="Assets\Ocean\Scripts\OceanAdvanced.cs" />
      <Compile Include="Assets\Script\ShipMove.cs" />
-     <Compile Include="Assets\Ocean\Scripts\GameEntity\FloatingGameEntityStorm.cs" />
-     <Compile Include="Assets\Ocean\Scripts\SplashGenerator.cs" />
-     <Compile Include="Assets\Ocean\Scripts\GameEntity\FloatingGameEntityRealist.cs" />
      <Compile Include="Assets\Script\MouseMove.cs" />
+     <Compile Include="Assets\Script\Level.cs" />
+     <Compile Include="Assets\Script\VirtualCursor.cs" />
+     <Compile Include="Assets\Script\Mainbattery.cs" />
+     <Compile Include="Assets\Script\ShipStat.cs" />
      <None Include="Assets\SkyBox\Readme.txt" />
      <None Include="Assets\Ocean\Shaders\Ocean.shader" />
      <None Include="Assets\Ocean\Shaders\OceanAdvanced.shader" />
@@ -276,11 +270,8 @@
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.24f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="ArchimedsLab">
-        <HintPath>C:\Users\USER\3D Objects\society\Unity\ship.io\Assets\Ocean\Scripts\ArchimedsLab.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>C:\Users\USER\3D Objects\society\Unity\ship.io\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
+        <HintPath>C:\Users\USER\Documents\ship.io\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.24f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -628,34 +619,34 @@
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.24f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>C:\Users\USER\3D Objects\society\Unity\ship.io\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>C:\Users\USER\Documents\ship.io\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>C:\Users\USER\3D Objects\society\Unity\ship.io\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>C:\Users\USER\Documents\ship.io\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>C:\Users\USER\3D Objects\society\Unity\ship.io\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>C:\Users\USER\Documents\ship.io\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>C:\Users\USER\3D Objects\society\Unity\ship.io\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>C:\Users\USER\Documents\ship.io\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>C:\Users\USER\3D Objects\society\Unity\ship.io\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+        <HintPath>C:\Users\USER\Documents\ship.io\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>C:\Users\USER\3D Objects\society\Unity\ship.io\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>C:\Users\USER\Documents\ship.io\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>C:\Users\USER\3D Objects\society\Unity\ship.io\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>C:\Users\USER\Documents\ship.io\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>C:\Users\USER\3D Objects\society\Unity\ship.io\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>C:\Users\USER\Documents\ship.io\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:\Users\USER\3D Objects\society\Unity\ship.io\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+        <HintPath>C:\Users\USER\Documents\ship.io\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>C:\Users\USER\3D Objects\society\Unity\ship.io\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+        <HintPath>C:\Users\USER\Documents\ship.io\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

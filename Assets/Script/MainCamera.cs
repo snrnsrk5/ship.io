@@ -72,7 +72,7 @@ public class MainCamera : MonoBehaviour
 
         if (toggleView == 3){
             Vector3 reverseDistance = new Vector3(0.0f, 0.0f,maxZoom);
-
+            if(distance == maxZoom) distance = 30f;
             transform.position = Vector3.SmoothDamp(transform.position,
                                 player.transform.position + transform.rotation * reverseDistance,
                                 ref velocity,SmoothTime);
