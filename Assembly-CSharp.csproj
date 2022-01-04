@@ -36,14 +36,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\Level.cs" />
      <Compile Include="Assets\Script\MainCamera.cs" />
+     <Compile Include="Assets\Script\MainBattery.cs" />
+     <Compile Include="Assets\Script\ShipStat.cs" />
      <Compile Include="Assets\Ocean\Scripts\OceanAdvanced.cs" />
+     <Compile Include="Assets\Script\VirtualCursor.cs" />
      <Compile Include="Assets\Script\ShipMove.cs" />
      <Compile Include="Assets\Script\MouseMove.cs" />
-     <Compile Include="Assets\Script\Level.cs" />
-     <Compile Include="Assets\Script\VirtualCursor.cs" />
-     <Compile Include="Assets\Script\Mainbattery.cs" />
-     <Compile Include="Assets\Script\ShipStat.cs" />
+     <Compile Include="Assets\Script\MainBulletMove.cs" />
      <None Include="Assets\SkyBox\Readme.txt" />
      <None Include="Assets\Ocean\Shaders\Ocean.shader" />
      <None Include="Assets\Ocean\Shaders\OceanAdvanced.shader" />

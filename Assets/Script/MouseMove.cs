@@ -1,19 +1,18 @@
  using UnityEngine;
  
- namespace BarthaSzabolcs.IsometricAiming
- {
      public class MouseMove : MonoBehaviour
      {
         Camera camera;
-        [SerializeField] bool isMove;
+        public bool isMove;
         [SerializeField] float speed;
         Vector3 destination;
+        MainBattery mainBattery;
         
         [SerializeField] GameObject ok;
         [SerializeField] GameObject load;
         void Awake(){
             camera = Camera.main;
-            
+            mainBattery = GetComponent<MainBattery>();
         }
 
         void Update(){
@@ -47,14 +46,15 @@
             }
         }
         void CursorColor(){
-            if(isMove){
-                ok.SetActive(false);
-                load.SetActive(true);
-            }
-            else{
+            if(isMove == false && Mathf.Round(mainBattery.reload*10)*0.1f == 0){
                 ok.SetActive(true);
                 load.SetActive(false);
             }
+            else{
+                
+                ok.SetActive(false);
+                load.SetActive(true);
+            }
         }
      }
- }
+ 
